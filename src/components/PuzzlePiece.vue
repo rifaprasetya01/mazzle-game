@@ -1,5 +1,5 @@
 <script setup>
-import {defineProps, ref, watch, onMounted, computed} from 'vue';
+import {ref, watch, onMounted, computed} from 'vue';
 
 const posterUrl = ref('');
 

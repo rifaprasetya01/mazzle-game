@@ -1,5 +1,5 @@
 <script setup>
-import {defineProps, onMounted, watch, ref} from 'vue';
+import {onMounted, watch, ref} from 'vue';
 
 const question = ref('');
 
@@ -7,7 +7,7 @@ const props = defineProps({
   question: {
     type: Array,
     require: true,
-    default: ['no question'],
+    default: ['No Question'],
   },
 });
 

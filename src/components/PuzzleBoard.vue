@@ -1,5 +1,5 @@
 <script setup>
-import {computed, ref, defineProps, watch, onMounted} from 'vue';
+import {computed, ref, watch, onMounted} from 'vue';
 
 const board = ref(null);
 const cells = ref([]);

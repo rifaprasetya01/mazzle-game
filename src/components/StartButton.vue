@@ -1,6 +1,4 @@
 <script setup>
-import {defineEmits} from 'vue';
-
 const emits = defineEmits(['gameStar']);
 </script>
 
@@ -11,6 +9,5 @@ const emits = defineEmits(['gameStar']);
 <style scoped>
 .start-btn {
   padding: 8px 16px;
-  
 }
 </style>

@@ -1,5 +1,5 @@
 <script setup>
-import {ref, onMounted, watch} from 'vue';
+import {ref, watch} from 'vue';
 import PuzzleBoard from '../components/PuzzleBoard.vue';
 import PuzzlePiece from '../components/PuzzlePiece.vue';
 import PiecePlaceholder from '../components/PiecePlaceholder.vue';
@@ -43,7 +43,6 @@ function resetGame() {
     gameOptions.value.isStarted = false;
     gameOptions.value.isWon = false;
 
-    console.log(slots.value);
     slots.value = slots.value.map((el) => {
       el.status = false;
 
@@ -109,22 +108,13 @@ function getPoster() {
 }
 
 watch(
-  () => [gameOptions.value.isStarted, gameOptions.value.isWon],
+  () => [gameOptions.value.isStarted],
   () => {
     getSlot();
     getPattern();
     getPoster();
-
-    console.log('Start: ', gameOptions.value.isStarted);
-    console.log('Win: ', gameOptions.value.isWon);
-    console.log('--');
   }
 );
-// onMounted(() => {
-//   getSlot();
-//   getPattern();
-//   getPoster();
-// });
 </script>
 
 <template>
@@ -144,7 +134,11 @@ watch(
     <aside>
       <QuestionField
         :question="
-          pattern.question[currentSelectedSlot ? currentSelectedSlot.key : -1]
+          gameOptions.isStarted
+            ? pattern.question[
+                currentSelectedSlot ? currentSelectedSlot.key : -1
+              ]
+            : ['No Question']
         " />
 
       <PiecePlaceholder ref="placeholderRef">

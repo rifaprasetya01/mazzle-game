@@ -1,5 +1,5 @@
 <script setup>
-import {ref, defineProps, onMounted, computed, watch, onUpdated} from 'vue';
+import {ref, onMounted, computed, watch} from 'vue';
 
 const props = defineProps({
   placeholderEl: Object,
